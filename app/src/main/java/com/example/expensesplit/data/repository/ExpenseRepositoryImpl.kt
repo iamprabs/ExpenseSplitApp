@@ -64,4 +64,16 @@ class ExpenseRepositoryImpl @Inject constructor(
             )
         }
     }
+
+    override fun getAllExpenses(): Flow<List<ExpenseEntity>> {
+        return expenseDao.getAllExpenses()
+    }
+
+    override fun getAllExpenseSplits(): Flow<List<ExpenseSplitEntity>> {
+        return expenseDao.getAllExpenseSplits()
+    }
+
+    override fun getAllExpensePayers(): Flow<List<ExpensePayerEntity>> {
+        return expenseDao.getAllExpensePayers()
+    }
 }

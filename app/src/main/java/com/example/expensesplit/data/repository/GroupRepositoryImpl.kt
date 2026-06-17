@@ -76,4 +76,8 @@ class GroupRepositoryImpl @Inject constructor(
             )
         )
     }
+
+    override fun getAllGroupMembers(): Flow<List<com.example.expensesplit.data.local.entity.GroupMemberEntity>> {
+        return groupDao.getAllGroupMembers()
+    }
 }

@@ -9,4 +9,5 @@ interface GroupRepository {
     suspend fun createGroup(name: String, description: String?, coverUrl: String?)
     suspend fun updateGroup(group: GroupEntity)
     suspend fun deleteGroup(id: String)
+    fun getAllGroupMembers(): Flow<List<com.example.expensesplit.data.local.entity.GroupMemberEntity>>
 }

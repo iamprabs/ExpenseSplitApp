@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">割り勘アプリ</string>
+    <string name="analytics">分析</string>
+    <string name="total_spending">支出合計</string>
+    <string name="category_breakdown">カテゴリー別内訳</string>
+    <string name="app_settings">アプリ設定</string>
+    <string name="language">言語</string>
+    <string name="base_currency">基準通貨</string>
+    <string name="cloud_sync">クラウド同期</string>
+    <string name="offline_mode">オフラインモード</string>
+    <string name="active">有効</string>
+    <string name="available">利用可能</string>
+    <string name="select_language">言語を選択</string>
+</resources>

@@ -24,6 +24,9 @@ interface GroupDao {
     @Query("SELECT * FROM group_members WHERE groupId = :groupId")
     fun getGroupMembers(groupId: String): Flow<List<com.example.expensesplit.data.local.entity.GroupMemberEntity>>
 
+    @Query("SELECT * FROM group_members")
+    fun getAllGroupMembers(): Flow<List<com.example.expensesplit.data.local.entity.GroupMemberEntity>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertGroupMember(member: com.example.expensesplit.data.local.entity.GroupMemberEntity)
 }

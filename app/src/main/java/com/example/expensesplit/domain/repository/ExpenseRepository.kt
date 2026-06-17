@@ -13,4 +13,8 @@ interface ExpenseRepository {
         splits: List<ExpenseSplitEntity>
     )
     suspend fun deleteExpense(expenseId: String)
+
+    fun getAllExpenses(): Flow<List<ExpenseEntity>>
+    fun getAllExpenseSplits(): Flow<List<ExpenseSplitEntity>>
+    fun getAllExpensePayers(): Flow<List<ExpensePayerEntity>>
 }

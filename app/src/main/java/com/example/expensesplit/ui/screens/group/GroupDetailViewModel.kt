@@ -36,4 +36,14 @@ class GroupDetailViewModel @Inject constructor(
             started = SharingStarted.WhileSubscribed(5000),
             initialValue = emptyList()
         )
+
+    val members: StateFlow<List<com.example.expensesplit.data.local.entity.GroupMemberEntity>> = kotlinx.coroutines.flow.flow {
+        groupRepository.getAllGroupMembers().collect { allMembers ->
+            emit(allMembers.filter { it.groupId == groupId })
+        }
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = emptyList()
+    )
 }

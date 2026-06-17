@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Partage de Frais</string>
+    <string name="analytics">Analytique</string>
+    <string name="total_spending">Dépenses Totales</string>
+    <string name="category_breakdown">Répartition par Catégorie</string>
+    <string name="app_settings">Paramètres de l\'Application</string>
+    <string name="language">Langue</string>
+    <string name="base_currency">Devise de Référence</string>
+    <string name="cloud_sync">Synchronisation Nuage</string>
+    <string name="offline_mode">Mode Hors-ligne</string>
+    <string name="active">Actif</string>
+    <string name="available">Disponible</string>
+    <string name="select_language">Choisir la Langue</string>
+</resources>

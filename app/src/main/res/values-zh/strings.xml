@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">账单分摊</string>
+    <string name="analytics">数据分析</string>
+    <string name="total_spending">总支出</string>
+    <string name="category_breakdown">类别明细</string>
+    <string name="app_settings">应用设置</string>
+    <string name="language">语言选择</string>
+    <string name="base_currency">本位币</string>
+    <string name="cloud_sync">云端同步</string>
+    <string name="offline_mode">离线模式</string>
+    <string name="active">已启用</string>
+    <string name="available">可用</string>
+    <string name="select_language">选择语言</string>
+</resources>

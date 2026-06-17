@@ -31,4 +31,14 @@ interface ExpenseDao {
 
     @Query("SELECT * FROM expense_payers WHERE expenseId = :expenseId")
     suspend fun getPayersForExpense(expenseId: String): List<ExpensePayerEntity>
+
+    // Global queries for balance calculations
+    @Query("SELECT * FROM expenses WHERE deletedAt IS NULL")
+    fun getAllExpenses(): Flow<List<ExpenseEntity>>
+
+    @Query("SELECT * FROM expense_splits")
+    fun getAllExpenseSplits(): Flow<List<ExpenseSplitEntity>>
+
+    @Query("SELECT * FROM expense_payers")
+    fun getAllExpensePayers(): Flow<List<ExpensePayerEntity>>
 }

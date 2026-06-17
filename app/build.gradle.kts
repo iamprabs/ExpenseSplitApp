@@ -110,4 +110,10 @@ dependencies {
   // SQLCipher
   implementation(libs.sqlcipher)
   implementation(libs.sqlite)
+
+  // ML Kit OCR Receipt Scan
+  implementation("com.google.android.gms:play-services-mlkit-text-recognition:19.0.0")
+
+  // AppCompat for locale switching support
+  implementation("androidx.appcompat:appcompat:1.6.1")
 }

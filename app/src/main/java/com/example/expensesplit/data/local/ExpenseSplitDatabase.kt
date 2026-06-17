@@ -15,7 +15,7 @@ import com.example.expensesplit.data.local.entity.*
         ExpenseSplitEntity::class,
         SyncOutboxEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class ExpenseSplitDatabase : RoomDatabase() {

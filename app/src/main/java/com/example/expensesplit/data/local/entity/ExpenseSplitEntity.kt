@@ -6,5 +6,7 @@ import androidx.room.Entity
 data class ExpenseSplitEntity(
     val expenseId: String,
     val userId: String,
-    val amount: Double
+    val shareType: String = "EQUAL",
+    val value: Double = 0.0,
+    val computedAmount: Double = 0.0
 )
