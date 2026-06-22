@@ -1,0 +1,247 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Friend Directory &amp; Invitations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dfe0ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary-fixed": "#ffdadc",
+                        "surface-tint": "#535a92",
+                        "on-primary-fixed": "#0e154b",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "on-surface-variant": "#46464f",
+                        "tertiary": "#490013",
+                        "on-tertiary-container": "#fc7185",
+                        "surface-dim": "#d8dadc",
+                        "outline-variant": "#c7c5d1",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "inverse-primary": "#bcc2ff",
+                        "primary": "#131b50",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#007439",
+                        "on-primary-container": "#949ad7",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#700223",
+                        "on-tertiary-fixed": "#400010",
+                        "secondary-container": "#6dfe9c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2a3166",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-surface": "#191c1e",
+                        "outline": "#767680",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary": "#006d36"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline w-full top-0 sticky z-40 pt-safe">
+<div class="flex items-center px-margin-mobile h-14 w-full">
+<button class="mr-4 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-full p-2 flex items-center justify-center" onclick="window.location.href='{{DATA:SCREEN:SCREEN_22}}'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed-dim">Friends</h1>
+<div class="flex-grow"></div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col px-margin-mobile py-lg pb-[80px] gap-xl max-w-2xl mx-auto w-full">
+<!-- Invite Section (Bento style) -->
+<section class="flex flex-col gap-md">
+<h2 class="font-title-lg text-title-lg text-on-surface">Invite Friends</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- QR Code Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col items-center justify-center gap-md shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
+<div class="w-32 h-32 bg-surface-container flex items-center justify-center rounded-lg border border-outline-variant p-2">
+<img alt="QR Code" class="w-full h-full object-contain" data-alt="A clean, minimalist QR code design in deep indigo and white, suitable for a modern fintech app interface. The QR code should be sharp and high contrast, reflecting a professional and secure corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqVDmFzibLv5el0Exldv4wUI7Ky3QGiTB2kBJgBnCvlO31rd5vVZ_MXeSIDhjDQuK0_AMnZO4ZB-0GsHk_K1h_qUrpjv2YZWYnRKSm57hWtOHhzY1pARWyypEliUmp3CHEHcV3hccszNGhk2R57o4gDCARI5dGs57I6J0D0_pYpdPQOW1rRUSYkmSbdPtklDf8Tjl-xA2FsprQ-LQ-cbKZmDjfWA_bpMJE7yeW-XLDof2uEW0nNB3oSpGZZIHC1k_zaUfgy8YZ67E">
+</div>
+<div class="text-center">
+<p class="font-label-lg text-label-lg text-on-surface">Scan to connect</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Show this code to split bills instantly.</p>
+</div>
+</div>
+<!-- Share Link & Sync Card -->
+<div class="flex flex-col gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col gap-md shadow-sm">
+<p class="font-label-lg text-label-lg text-on-surface">Share Link</p>
+<div class="flex items-center gap-sm">
+<div class="flex-grow bg-surface-container rounded-lg px-sm py-2 overflow-hidden border border-outline-variant">
+<span class="font-body-md text-body-md text-on-surface-variant truncate block w-full">ceipts.app/invite/alex.w</span>
+</div>
+<button class="bg-primary text-on-primary rounded-lg p-2 flex items-center justify-center hover:bg-on-primary-fixed-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<button class="bg-surface-container-lowest border border-secondary rounded-xl p-lg flex items-center justify-center gap-sm shadow-sm hover:bg-surface-container-low transition-colors active:scale-95 group">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-secondary-container transition-colors" data-icon="sync">sync</span>
+<span class="font-label-lg text-label-lg text-secondary group-hover:text-on-secondary-container transition-colors">Sync Contacts</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Frequent Splitters Directory -->
+<section class="flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h2 class="font-title-lg text-title-lg text-on-surface">Frequent Splitters</h2>
+<button class="font-label-md text-label-md text-primary uppercase tracking-wider">View All</button>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<!-- User Item 1 -->
+<div class="flex items-center justify-between p-md border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A professional portrait photo of a young woman with a warm smile, suitable for a modern app avatar. She has dark hair and is wearing a smart casual outfit. Lighting is bright, soft, and even, set against a clean, neutral white background to fit a corporate minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Wmjfuy4JwZz4KdowrWxKFOqB9ehvBBIdc4QXUI_PDcgiSRGzT193wMrOuW4ByEz9DxrtIqrqkGG7BZ3s1prEZFV6ukeFt35Zw72GR92GLq0Eqtrgy-IsP1LOIURAvNECwvMCBVijZi3JB_9F_sy2QLYtj5DW9zicw6rBHOaCxpurAjfjX3fcNWH19lmSctEbHWA7g88_oUBFtCCVZxhXgxP4DYfRouUJH4C-AKW45QS83zihvP9xto7aGqbayPXsSbx2jdjcXFE">
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Sarah Jenkins</span>
+<span class="font-body-md text-body-md text-on-surface-variant">@sarahj</span>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- User Item 2 -->
+<div class="flex items-center justify-between p-md border-b border-outline-variant hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface-variant font-headline-lg-mobile">
+                            M
+                        </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Michael Chang</span>
+<span class="font-body-md text-body-md text-on-surface-variant">@mchang99</span>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- User Item 3 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A professional portrait photo of a man in his thirties with glasses and a short beard, suitable for a modern app avatar. He is wearing a dark indigo shirt. The lighting is studio quality, soft and bright, set against a pristine light gray background typical of corporate fintech identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxn6szCt-CYiNniP41W4SMAxaQ9vZjrHnWzz_rPusN6h0N7DohPnYNUY8GzFbVpr84B0DdHj6ecly_1V6_yF6wWVHDqXVi51oDZGsQ2Oj46IeAjciyUBdGOhyKlr7F2FtVeKK0eQNU0M5lwpLr_ip4kVk9Xnd-P9vAbfCl3-HElTlJRxOFaYlQsYmUnv3o1XEyR8uizIWhDBJ35yt9mTBfWsfMVK3C2FfxFZQZnxr-VJAesvZnj0ckc-G3SBXxW1FMjqmTU4NOkC0">
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">David O'Connor</span>
+<span class="font-body-md text-body-md text-on-surface-variant">@doconnor</span>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-5 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="{{DATA:SCREEN:SCREEN_22}}">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-5 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-md text-label-md">Groups</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-5 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-5 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+
+
+</body></html>

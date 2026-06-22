@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">账单分摊</string>
+    <string name="app_name">Ceipts</string>
     <string name="analytics">数据分析</string>
     <string name="total_spending">总支出</string>
     <string name="category_breakdown">类别明细</string>

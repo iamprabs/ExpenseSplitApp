@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ceipts - Create Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#4de082",
+                        "on-tertiary-fixed": "#400010",
+                        "on-surface": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#fc7185",
+                        "surface-tint": "#535a92",
+                        "tertiary": "#490013",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "outline": "#767680",
+                        "on-surface-variant": "#46464f",
+                        "on-primary-fixed": "#0e154b",
+                        "tertiary-fixed": "#ffdadc",
+                        "primary-container": "#2a3166",
+                        "background": "#f7f9fb",
+                        "on-primary-container": "#949ad7",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00210c",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "on-secondary-container": "#007439",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-primary": "#bcc2ff",
+                        "secondary": "#006d36",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6dfe9c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dfe0ff",
+                        "primary": "#131b50",
+                        "tertiary-container": "#700223",
+                        "outline-variant": "#c7c5d1",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "surface-dim": "#d8dadc",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container": "#eceef0",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen relative overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background dark:bg-on-surface z-40 transition-colors duration-300">
+<div class="flex items-center justify-between px-margin-mobile py-sm w-full h-16 max-w-screen-xl mx-auto">
+<!-- Leading Element: Avatar -->
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-high overflow-hidden hover:bg-surface-container-low dark:hover:bg-on-surface-variant transition-colors active:scale-95 duration-150 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<img alt="User Profile" class="object-cover w-full h-full" data-alt="A close up, professional headshot of a smiling young woman with dark hair, wearing a dark blue blouse. The lighting is soft and natural, suggesting a bright office environment. The overall mood is approachable and trustworthy, fitting for a modern financial application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6uA2PizLdgnHz-94U_Xxldo5ZN56DPVSVjG8vg2ddYYT-seSzlTV7vvPF8eM0gFCUmyz_4c3UBpPsxl-y6tQn9AWFv60Ea1WADXaE79tX18vaUK-22uJN30S0LtOuzY7c334oH-RynWIH6lekXe20dFQ9OOGUxW3DTetSGUHyJYXgMKJelGGzaywGWH_J4Rqz9S-JVGT0ggS1IVQiyG8HQUapArwBnCx1IJ7eVHglFsbIj000AyWnwDwLdej7aBHnVoK_OHkZQdQ">
+</button>
+<!-- Headline -->
+<h1 class="font-display-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Ceipts</h1>
+<!-- Trailing Element: Icon -->
+<button aria-label="Notifications" class="flex items-center justify-center w-10 h-10 rounded-full text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-low dark:hover:bg-on-surface-variant transition-colors active:scale-95 duration-150 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas Content -->
+<main class="flex-grow w-full max-w-screen-md mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<!-- Page Title -->
+<div class="mb-xl flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 text-on-surface-variant" onclick="window.location.href='{{DATA:SCREEN:SCREEN_13}}'">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-title-lg text-title-lg md:font-headline-lg md:text-headline-lg text-on-surface font-semibold">Create Group</h2>
+</div>
+<form class="space-y-xl">
+<!-- Group Details Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-container-highest p-md md:p-lg space-y-md shadow-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider mb-xs">Group Details</h3>
+<!-- Group Name Input -->
+<div class="relative w-full">
+<input class="peer w-full h-14 bg-transparent border border-outline rounded-lg px-4 pt-4 pb-1 text-on-surface font-body-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-transparent" id="group-name" placeholder="Group Name" type="text">
+<label class="absolute left-4 top-4 text-on-surface-variant font-body-md transition-all peer-focus:-top-2 peer-focus:left-3 peer-focus:text-xs peer-focus:text-primary peer-focus:bg-surface-container-lowest peer-focus:px-1 peer-[:not(:placeholder-shown)]:-top-2 peer-[:not(:placeholder-shown)]:left-3 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:bg-surface-container-lowest peer-[:not(:placeholder-shown)]:px-1" for="group-name">Group Name (e.g., Trip to Paris)</label>
+</div>
+<!-- Group Category Select -->
+<div class="relative w-full">
+<select class="peer w-full h-14 bg-transparent border border-outline rounded-lg px-4 pt-4 pb-1 text-on-surface font-body-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none" id="group-category">
+<option disabled="" hidden="" selected="" value=""></option>
+<option value="trip">Trip</option>
+<option value="home">Home</option>
+<option value="office">Office</option>
+<option value="other">Other</option>
+</select>
+<label class="absolute left-4 top-2 text-xs text-on-surface-variant font-body-md transition-all pointer-events-none peer-focus:text-primary" for="group-category">Group Category</label>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</section>
+<!-- Add Members Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-surface-container-highest p-md md:p-lg space-y-md shadow-sm">
+<div class="flex items-center justify-between mb-xs">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Add Members</h3>
+<span class="font-label-md text-label-md text-primary bg-primary-fixed bg-opacity-20 px-2 py-1 rounded-full">0 Selected</span>
+</div>
+<!-- Search Input -->
+<div class="relative w-full mb-md">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+<input class="w-full h-12 bg-surface border border-transparent rounded-full pl-10 pr-4 text-on-surface font-body-md focus:outline-none focus:border-outline focus:bg-surface-container-lowest transition-all placeholder:text-outline" placeholder="Search contacts..." type="text">
+</div>
+<!-- Suggested Friends List -->
+<div class="space-y-sm max-h-64 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Friend Item 1 -->
+<div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img alt="Alex Johnson" class="object-cover w-full h-full" data-alt="A close-up portrait of a young man with short brown hair and glasses, smiling gently. He is wearing a casual grey t-shirt. The background is slightly blurred, suggesting an outdoor park setting with natural sunlight. Modern, clean aesthetic suitable for a social profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5BkFq-hysHkocAVnePTi10qcpkQh97VIm3jcYtiChuD5ke7Pdl-ACgc1CmDLHKe1fO0HlQ0lMTTItxEAKMg-iLPLR5KLmxp4zAR_sux7lAKkDFHafUx5hRz5nR9JDthhGh6fdd38SGUL44yMok_yiiYwvIQCM9cZpId2b_GBoK33W4ztAR7FItgNrx8UAjTnT9xmWndjiwbjD2wauHq7s354Io-S15kba_tRXcE911aV6pZ9Puvdyjii5SoYxssBQ2oxUCfDVfFo">
+</div>
+<div>
+<p class="font-title-lg text-[16px] text-on-surface leading-snug">Alex Johnson</p>
+<p class="font-body-md text-label-md text-on-surface-variant">alex.j@example.com</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary-fixed hover:border-transparent transition-colors focus:outline-none active:scale-95" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<!-- Friend Item 2 -->
+<div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img alt="Maria Garcia" class="object-cover w-full h-full" data-alt="A portrait of an older woman with silver hair, wearing a bright yellow sweater. She has a warm, inviting smile. The lighting is soft and even, highlighting her features against a neutral, light grey background. Professional yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbfTQRjWI6SqFXVnl40Cl3YLRCvti_7kS2ClJ0Bu8b_HWPcDHiRCa5QYo9dAkQc7CXpFfYp754uqs5jiKb7PHccx2rrfju1J0TuChuKBxiBL2-bVF0opgBZ5BQW5YO48jEsJq-vM2UOU8BC-eSrem5S02FmdqNuZTgAnBza7D5_IL3zxKI3hcxz7ZPJeohExoCjhsg4Dv_ZJQA-hEv4_Ck7NPR6vC4istgz0DGdCsmdSDMT3A-t6TjT2vdRs0_rHMvifKeTU7PppI">
+</div>
+<div>
+<p class="font-title-lg text-[16px] text-on-surface leading-snug">Maria Garcia</p>
+<p class="font-body-md text-label-md text-on-surface-variant">m.garcia88@example.com</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary-fixed hover:border-transparent transition-colors focus:outline-none active:scale-95" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+<!-- Friend Item 3 (Selected State Example) -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-primary-fixed bg-opacity-20 border border-primary-fixed-dim transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shrink-0 relative">
+<div class="absolute inset-0 bg-primary opacity-20"></div>
+<span class="absolute inset-0 flex items-center justify-center material-symbols-outlined text-white z-10 text-xl font-bold">check</span>
+<img alt="David Kim" class="object-cover w-full h-full mix-blend-multiply" data-alt="A professional headshot of a man with a dark beard and short dark hair. He is wearing a crisp white button-down shirt. The background is a solid deep blue color. The lighting is studio-quality, casting subtle shadows to emphasize his facial structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaR4NXL-vSk9_2zFzjdadByebvX-hImQ99pRzgbA6bEhARKifxpL94h_FOsHCNZrUu6TZ5059pJWuN9vXKvc8dd0rWVMb46Bgh79qiEyLlJNS_GGJAkx2HYJ7yHhbCRRpYT1FNMiCioRwYUxAKPKOeg8GVAOWAVfqTb6pn7SSso82lOqeqdDvZJKDI2tWc-DKm6qLHHcb4hYTh5I33xgd_GBykPIRDDsiIg7_n3TyW-IZ-LAw-At7YNNl7wAD8guYyqqLcUa1eklM">
+</div>
+<div>
+<p class="font-title-lg text-[16px] text-on-surface leading-snug font-medium">David Kim</p>
+<p class="font-body-md text-label-md text-on-surface-variant">davidk@example.com</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white transition-colors focus:outline-none active:scale-95" type="button">
+<span class="material-symbols-outlined text-lg">check</span>
+</button>
+</div>
+</div>
+<!-- Add via Link -->
+<div class="pt-sm border-t border-surface-variant mt-sm">
+<button class="flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline decoration-2 underline-offset-4 focus:outline-none w-full justify-center p-sm rounded-lg hover:bg-primary-fixed hover:bg-opacity-20 transition-colors" type="button">
+<span class="material-symbols-outlined">link</span>
+                        Copy Invite Link
+                    </button>
+</div>
+</section>
+<!-- Primary Action Button -->
+<div class="pt-lg">
+<button class="w-full h-14 bg-primary text-on-primary font-title-lg text-[16px] font-semibold rounded-full shadow-sm hover:shadow-md hover:bg-opacity-90 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background" type="submit" onclick="window.location.href='{{DATA:SCREEN:SCREEN_13}}'">
+                    Create Group
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar (Hidden on this transactional screen as per Semantic Shell Mandate) -->
+<!-- Suppressed: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional..." -->
+<style>
+        /* Custom Scrollbar for the friend list to keep it neat */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e3e5; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #c7c5d1; 
+        }
+    </style>
+
+
+</body></html>

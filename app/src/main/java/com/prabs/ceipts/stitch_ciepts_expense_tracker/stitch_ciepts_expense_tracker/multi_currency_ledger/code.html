@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Multi-currency Ledger - Tokyo Trip</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dfe0ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary-fixed": "#ffdadc",
+                        "surface-tint": "#535a92",
+                        "on-primary-fixed": "#0e154b",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "on-surface-variant": "#46464f",
+                        "tertiary": "#490013",
+                        "on-tertiary-container": "#fc7185",
+                        "surface-dim": "#d8dadc",
+                        "outline-variant": "#c7c5d1",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "inverse-primary": "#bcc2ff",
+                        "primary": "#131b50",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#007439",
+                        "on-primary-container": "#949ad7",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#700223",
+                        "on-tertiary-fixed": "#400010",
+                        "secondary-container": "#6dfe9c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2a3166",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-surface": "#191c1e",
+                        "outline": "#767680",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary": "#006d36"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(247, 249, 251, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(199, 197, 209, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col pb-[80px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface border-b border-outline-variant z-40 flex flex-col">
+<div class="flex items-center px-margin-mobile h-14 w-full">
+<button aria-label="Go back" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 -ml-2 active:scale-95 duration-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg-mobile text-primary ml-2 flex-1">Tokyo Trip</h1>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 active:scale-95 duration-100 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
+<!-- Hero: Total Group Spend -->
+<section class="glass-panel rounded-xl p-lg flex flex-col items-center justify-center text-center relative overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 z-0 pointer-events-none"></div>
+<div class="relative z-10 w-full">
+<div class="flex items-center justify-center space-x-2 mb-sm">
+<span class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">Total Group Spend</span>
+<button class="text-on-surface-variant p-1 rounded-full hover:bg-surface-container-high transition-colors" title="View details">
+<span class="material-symbols-outlined text-[18px]" data-icon="info">info</span>
+</button>
+</div>
+<div class="flex flex-col items-center justify-center mb-md">
+<h2 class="font-display-lg text-display-lg text-primary">¥450,200</h2>
+<p class="font-title-lg text-title-lg text-on-surface-variant mt-xs">≈ $3,050.84 USD</p>
+</div>
+<div class="inline-flex items-center bg-surface-container px-4 py-2 rounded-full mt-sm border border-outline-variant/50">
+<span class="material-symbols-outlined text-secondary mr-2 text-[18px] icon-fill" data-icon="autorenew">autorenew</span>
+<span class="font-label-md text-label-md text-on-surface">1 USD = 147.56 JPY</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-2 flex items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1"></span> Live
+                    </span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout for Ledger & Currency Settings -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Individual Balances (Left Column / Main) -->
+<section class="md:col-span-8 space-y-md">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Balances</h3>
+<button class="font-label-md text-label-md text-primary bg-primary-fixed hover:bg-primary-fixed-dim px-4 py-2 rounded-full transition-colors font-medium">Settle Up</button>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<!-- Balance Item: You (Owes) -->
+<div class="flex items-center p-md border-b border-surface-container-high hover:bg-surface-container-lowest/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-title-lg text-title-lg mr-md flex-shrink-0 relative">
+<span>S</span>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-error rounded-full border-2 border-surface-container-lowest flex items-center justify-center"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-lg text-body-lg text-on-surface truncate">Sarah (You)</h4>
+<p class="font-body-md text-body-md text-error flex items-center">
+                                You owe the group
+                            </p>
+</div>
+<div class="text-right flex-shrink-0">
+<p class="font-title-lg text-title-lg text-error">¥12,500</p>
+<p class="font-label-md text-label-md text-on-surface-variant">≈ $84.71</p>
+</div>
+</div>
+<!-- Balance Item: Mark (Gets back) -->
+<div class="flex items-center p-md border-b border-surface-container-high hover:bg-surface-container-lowest/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-title-lg text-title-lg mr-md flex-shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young man with short brown hair, wearing a casual dark blue t-shirt, smiling gently against a clean, light mode studio background. High quality, well-lit, corporate casual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDipsujLjCQH-E2I2YaQkvwL0jQU_AuEIckJp41jMWcUfxnco0bYIymyUI_oyXoGiQugU0hchU6EE-Rl1KsnjGOpX4C9-5v28pegHvidLET_aDbJqg0FCnEo5tCOPUnIdASJVJpktg0yM0XLXX8S4Z5XLuVE1VFkKuyyQV7EY2ukfArksPqoEX14EhcEUYsssWX0V06Yb33DS6VtdD7dcTehjglLo6zlJxQeYWQMI8Qx68PLtj-TBq7JxSpb4c0oujijSlpxFeJbUE"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-lg text-body-lg text-on-surface truncate">Mark</h4>
+<p class="font-body-md text-body-md text-secondary flex items-center">
+                                Gets back
+                            </p>
+</div>
+<div class="text-right flex-shrink-0">
+<p class="font-title-lg text-title-lg text-secondary">¥34,000</p>
+<p class="font-label-md text-label-md text-on-surface-variant">≈ $230.41</p>
+</div>
+</div>
+<!-- Balance Item: Elena (Settled) -->
+<div class="flex items-center p-md hover:bg-surface-container-lowest/50 transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-title-lg text-title-lg mr-md flex-shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A bright, high-key portrait of a young woman with curly hair, wearing a white blouse, looking directly at the camera with a neutral expression. Clean, modern aesthetic, light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFkCL4anKgvz5VH1FdZ53Fb7N3ikkt-gzSh1XBs0ztjQWDgl9VBLRq6lRBzSfVK-Tj5viC71oYxpX1iWY5InSkFpRCaIUoFav_TleZ15CoJnXWJVyUX_QcJoGGfwn6ebDL6ST97HXi7iHnDh5rEnUDK3bb1_C0usgQ8JPjdeyx2V92fLWHz2N51jqMG9RWBb3BF-sbQSuGTSfrUllpAEs88ymYUCxrvcjnWRa38AoToIoj_YUY8rJ4q_-sgA-ptA3_7BD1HT74e3Q"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-lg text-body-lg text-on-surface truncate">Elena</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center">
+                                Settled up
+                            </p>
+</div>
+<div class="text-right flex-shrink-0">
+<p class="font-title-lg text-title-lg text-on-surface-variant">¥0</p>
+<p class="font-label-md text-label-md text-on-surface-variant">≈ $0.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Settings & Recent -->
+<div class="md:col-span-4 space-y-md">
+<!-- Currency Settings -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm">
+<h3 class="font-title-lg text-title-lg text-primary mb-sm flex items-center">
+<span class="material-symbols-outlined mr-2 text-[20px]" data-icon="currency_exchange">currency_exchange</span>
+                        Currency Settings
+                    </h3>
+<div class="space-y-4 mt-md">
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body-md text-body-md text-on-surface">Base Currency</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Trip expenses</p>
+</div>
+<button class="flex items-center space-x-1 bg-surface-container-low hover:bg-surface-container-high px-3 py-1.5 rounded-lg border border-outline-variant/30 transition-colors">
+<span class="font-label-md text-label-md text-on-surface font-medium">JPY (¥)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+<div class="h-px bg-surface-container-highest w-full"></div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-body-md text-body-md text-on-surface">Home Currency</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Your view</p>
+</div>
+<button class="flex items-center space-x-1 bg-surface-container-low hover:bg-surface-container-high px-3 py-1.5 rounded-lg border border-outline-variant/30 transition-colors">
+<span class="font-label-md text-label-md text-on-surface font-medium">USD ($)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+<div class="h-px bg-surface-container-highest w-full"></div>
+<label class="flex justify-between items-center cursor-pointer group">
+<div>
+<p class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Real-time Rates</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Update balances automatically</p>
+</div>
+<div class="relative inline-flex items-center">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+</div>
+</section>
+<!-- Quick Add Action -->
+<button class="w-full py-3 rounded-xl border-2 border-dashed border-primary/30 text-primary hover:bg-primary/5 transition-colors flex items-center justify-center font-label-lg text-label-lg">
+<span class="material-symbols-outlined mr-2" data-icon="add">add</span>
+                    Add Expense
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface border-t border-outline-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Expenses</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-1 hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1 icon-fill" data-icon="group">group</span>
+<span class="font-label-md text-label-md font-medium">Groups</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</body></html>

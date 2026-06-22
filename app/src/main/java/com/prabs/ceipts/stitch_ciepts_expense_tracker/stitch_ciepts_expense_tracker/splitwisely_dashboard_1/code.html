@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SplitWisely Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#bcc2ff",
+                      "surface-container": "#eceef0",
+                      "inverse-primary": "#bcc2ff",
+                      "surface-container-low": "#f2f4f6",
+                      "on-secondary-fixed": "#00210c",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#3b4278",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#e6e8ea",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "primary-container": "#2a3166",
+                      "on-surface-variant": "#46464f",
+                      "on-secondary-fixed-variant": "#005227",
+                      "on-tertiary-container": "#fc7185",
+                      "outline": "#767680",
+                      "secondary-container": "#6dfe9c",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-container": "#007439",
+                      "surface": "#f7f9fb",
+                      "on-tertiary-fixed": "#400010",
+                      "inverse-on-surface": "#eff1f3",
+                      "outline-variant": "#c7c5d1",
+                      "tertiary-fixed": "#ffdadc",
+                      "tertiary-fixed-dim": "#ffb2b9",
+                      "surface-variant": "#e0e3e5",
+                      "secondary": "#006d36",
+                      "primary": "#131b50",
+                      "on-background": "#191c1e",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#0e154b",
+                      "background": "#f7f9fb",
+                      "on-primary-container": "#949ad7",
+                      "tertiary-container": "#700223",
+                      "on-surface": "#191c1e",
+                      "on-tertiary": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#6dfe9c",
+                      "surface-bright": "#f7f9fb",
+                      "tertiary": "#490013",
+                      "surface-tint": "#535a92",
+                      "secondary-fixed-dim": "#4de082",
+                      "on-tertiary-fixed-variant": "#891933",
+                      "primary-fixed": "#dfe0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "sm": "8px",
+                      "margin-desktop": "24px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "margin-mobile": "16px",
+                      "lg": "24px",
+                      "base": "4px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "title-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface flex justify-between items-center px-margin-mobile py-sm z-40">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant bg-surface-container-highest">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close-up, brightly lit corporate headshot portrait of a professional individual against a clean white background, conveying reliability and modern finance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3UH_ED7natGSdniwPwJFzER2vJeoebyLcncGGCFLJiDk6lh7FwKfCkhwLvA3gNPGY0S6ImxnVLCUKcjvQFNJZMWXFcmXoFTOQ74DCfIyeI7Q2EIt6hFAmSSdvFmd9kJUd8Rancrrc7CgfDYQRF7gDp9IqQSpv_MZhBgQSOHx97cJhp5J7Qt1zwXxq67hnteGRfvR-XCZlHCpbywY5CofaRG_N633H4QbiM5LqPZKRrcwfllOkh0GMykfHFUQXjiv85odYf-if7Vo"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">SplitWisely</h1>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 ease-in-out rounded-full relative">
+<span class="material-symbols-outlined text-title-lg">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+</header>
+<main class="px-margin-mobile pt-md flex flex-col gap-lg">
+<!-- Balance Summary Card (Bento style) -->
+<section class="bg-surface-container-lowest rounded-xl p-lg border border-surface-variant shadow-[0_2px_12px_rgba(19,27,80,0.04)] flex flex-col gap-md relative overflow-hidden">
+<!-- Decorative subtle background element -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary-fixed-dim opacity-20 rounded-full blur-2xl"></div>
+<div class="flex flex-col gap-xs z-10">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Total Balance</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-secondary flex items-center gap-xs">
+                    +$142.50
+                </h2>
+</div>
+<div class="w-full h-px bg-outline-variant opacity-50 my-sm z-10"></div>
+<div class="flex justify-between items-center z-10">
+<div class="flex flex-col gap-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">You are owed</span>
+<span class="font-title-lg text-title-lg text-secondary">$280.00</span>
+</div>
+<div class="w-px h-10 bg-outline-variant opacity-50"></div>
+<div class="flex flex-col gap-xs items-end">
+<span class="font-label-md text-label-md text-on-surface-variant">You owe</span>
+<span class="font-title-lg text-title-lg text-error">$137.50</span>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="flex gap-md w-full">
+<button class="flex-1 h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-sm active:bg-primary-container transition-colors shadow-[0_4px_14px_rgba(19,27,80,0.15)]">
+<span class="material-symbols-outlined text-lg">receipt_long</span>
+                Add Expense
+            </button>
+<button class="flex-1 h-12 bg-surface-container-lowest text-secondary border border-secondary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-sm active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg">payments</span>
+                Settle Up
+            </button>
+</section>
+<!-- Active Groups -->
+<section class="flex flex-col gap-sm">
+<div class="flex justify-between items-center mb-xs">
+<h3 class="font-title-lg text-title-lg text-on-background">Active Groups</h3>
+<button class="text-primary font-label-md text-label-md">View All</button>
+</div>
+<div class="flex flex-col gap-xs bg-surface-container-lowest rounded-xl border border-surface-variant overflow-hidden">
+<!-- Group 1 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container cursor-pointer border-b border-surface-variant last:border-0">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined filled-icon">flight_takeoff</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-background">Trip to Tokyo</span>
+<span class="font-label-md text-label-md text-on-surface-variant">4 members</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-secondary">+$85.00</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Owes you</span>
+</div>
+</div>
+<!-- Group 2 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container cursor-pointer border-b border-surface-variant last:border-0">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined filled-icon">home</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-background">Home</span>
+<span class="font-label-md text-label-md text-on-surface-variant">2 members</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-error">-$42.50</span>
+<span class="font-label-md text-label-md text-on-surface-variant">You owe</span>
+</div>
+</div>
+<!-- Group 3 -->
+<div class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container cursor-pointer border-b border-surface-variant last:border-0">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined filled-icon">celebration</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-background">Weekend Party</span>
+<span class="font-label-md text-label-md text-on-surface-variant">8 members</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Settled up</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe bg-surface-container-lowest shadow-[0_-1px_3px_rgba(0,0,0,0.05)] z-50">
+<!-- Active Tab: Dashboard -->
+<button class="flex flex-col items-center justify-center w-16 h-full scale-95 active:scale-90 transition-transform duration-150 relative">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1 mb-1">
+<span class="material-symbols-outlined filled-icon text-lg">dashboard</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Dashboard</span>
+</button>
+<!-- Inactive Tab: Groups -->
+<button class="flex flex-col items-center justify-center w-16 h-full scale-95 active:scale-90 transition-transform duration-150 text-on-surface-variant p-2 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined text-lg mb-1">group</span>
+<span class="font-label-md text-label-md">Groups</span>
+</button>
+<!-- Inactive Tab: Analytics -->
+<button class="flex flex-col items-center justify-center w-16 h-full scale-95 active:scale-90 transition-transform duration-150 text-on-surface-variant p-2 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined text-lg mb-1">insights</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</button>
+<!-- Inactive Tab: Settings -->
+<button class="flex flex-col items-center justify-center w-16 h-full scale-95 active:scale-90 transition-transform duration-150 text-on-surface-variant p-2 hover:bg-surface-container-high rounded-lg">
+<span class="material-symbols-outlined text-lg mb-1">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</button>
+</nav>
+</body></html>

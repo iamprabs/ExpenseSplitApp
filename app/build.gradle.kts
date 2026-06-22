@@ -8,10 +8,10 @@ plugins {
 }
 
 android {
-    namespace = "com.example.expensesplit"
+    namespace = "com.prabs.ceipts"
     compileSdk = 36
     defaultConfig {
-        applicationId = "com.example.expensesplit"
+        applicationId = "com.prabs.ceipts"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

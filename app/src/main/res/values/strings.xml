@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Expense Split</string>
+    <string name="app_name">Ceipts</string>
     <string name="analytics">Analytics</string>
     <string name="total_spending">Total Spending</string>
     <string name="category_breakdown">Category Breakdown</string>

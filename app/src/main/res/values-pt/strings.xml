@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Rachar Despesas</string>
+    <string name="app_name">Ceipts</string>
     <string name="analytics">Análises</string>
     <string name="total_spending">Despesas Totais</string>
     <string name="category_breakdown">Divisão por Categoria</string>

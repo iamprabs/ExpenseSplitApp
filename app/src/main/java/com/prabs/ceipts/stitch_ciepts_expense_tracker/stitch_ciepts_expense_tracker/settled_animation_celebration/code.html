@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ceipts - All Settled</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-surface-variant": "#46464f",
+                        "surface-tint": "#535a92",
+                        "secondary-fixed-dim": "#4de082",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#700223",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#c7c5d1",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-container": "#949ad7",
+                        "surface": "#f7f9fb",
+                        "secondary": "#006d36",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "primary-container": "#2a3166",
+                        "tertiary-fixed": "#ffdadc",
+                        "outline": "#767680",
+                        "on-secondary-fixed": "#00210c",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-container": "#6dfe9c",
+                        "primary-fixed": "#dfe0ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#0e154b",
+                        "primary": "#131b50",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fc7185",
+                        "inverse-primary": "#bcc2ff",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#490013",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#400010",
+                        "background": "#f7f9fb",
+                        "on-secondary-container": "#007439"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "margin-desktop": "24px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    },
+                    "animation": {
+                        "fade-up": "fadeUp 0.8s ease-out forwards",
+                        "scale-in": "scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+                        "stagger-1": "fadeUp 0.5s ease-out 0.2s forwards",
+                        "stagger-2": "fadeUp 0.5s ease-out 0.3s forwards",
+                        "stagger-3": "fadeUp 0.5s ease-out 0.4s forwards",
+                        "stagger-4": "fadeUp 0.5s ease-out 0.5s forwards"
+                    },
+                    "keyframes": {
+                        "fadeUp": {
+                            "0%": { opacity: "0", transform: "translateY(20px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" }
+                        },
+                        "scaleIn": {
+                            "0%": { opacity: "0", transform: "scale(0.5)" },
+                            "100%": { opacity: "1", transform: "scale(1)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glow-success {
+            box-shadow: 0 0 40px rgba(109, 254, 156, 0.4);
+        }
+        .opacity-0 { opacity: 0; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden w-full h-screen relative flex flex-col items-center justify-center">
+<!-- 3D Animation Background -->
+<!-- STITCH_THREEJS_START:ANIMATION_39 class="absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none" -->
+<div class="absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_39" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_39');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+camera.position.z = 5;
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Create celebratory particles (confetti-like)
+const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.01);
+const colors = [0x2a3166, 0x00c853, 0x2979ff, 0xffd600];
+const particles = [];
+
+for (let i = 0; i < 150; i++) {
+    const material = new THREE.MeshPhongMaterial({
+        color: colors[Math.floor(Math.random() * colors.length)],
+        side: THREE.DoubleSide
+    });
+    const particle = new THREE.Mesh(geometry, material);
+    
+    particle.position.set(
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10 + 2,
+        (Math.random() - 0.5) * 5
+    );
+    
+    particle.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+    
+    particle.userData = {
+        velocity: new THREE.Vector3((Math.random() - 0.5) * 0.05, -Math.random() * 0.05 - 0.02, (Math.random() - 0.5) * 0.02),
+        rotationSpeed: new THREE.Vector3(Math.random() * 0.1, Math.random() * 0.1, Math.random() * 0.1)
+    };
+    
+    scene.add(particle);
+    particles.push(particle);
+}
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0xffffff, 0.8);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    particles.forEach(p => {
+        p.position.add(p.userData.velocity);
+        p.rotation.x += p.userData.rotationSpeed.x;
+        p.rotation.y += p.userData.rotationSpeed.y;
+        
+        // Reset particles that go off screen
+        if (p.position.y < -5) {
+            p.position.y = 5;
+            p.position.x = (Math.random() - 0.5) * 10;
+        }
+    });
+    
+    renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+    const newWidth = container.clientWidth || window.innerWidth;
+    const newHeight = container.clientHeight || window.innerHeight;
+    camera.aspect = newWidth / newHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(newWidth, newHeight);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_39 -->
+<!-- Top Navigation (Suppressed per intent logic, leaving bare minimum header for logo) -->
+<header class="absolute top-0 w-full flex justify-center items-center px-margin-mobile md:px-margin-desktop h-20 z-20">
+<img alt="Ceipts Logo" class="h-10 w-auto opacity-80" data-alt="Minimalist modern fintech logo featuring a sleek, geometric C shape in deep indigo. The design conveys trust and clarity, set against a pristine white background. Corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjqVjvvbj0Mdm1loFtpM2GlwoPWyn-DBa8pIGENN3enK5GKWSzfuZ2aDLjFUaqwCmQHLZxenUuUQ_rOcXqX0nCjikxzm3GocfA20fSDWQUs_K5BLMtg2YseWRlH_YgaJqDruPTu-Qr9VCUADCQQ9emqyq_oeSd0xPBr4DZRiNtr-BoXP4SR2qdNn1sw8uo0SHJoixFXxrrejGg4LuTk5d-WGigCReu_WB9gfeXOsAoM9luk6_vMJAaItAgt4VyzVh6dMD8GQ7vKfI"/>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-10 w-full max-w-lg px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<!-- Celebration Header -->
+<div class="flex flex-col items-center text-center mb-xl">
+<div class="w-24 h-24 bg-secondary-container rounded-full flex items-center justify-center mb-lg animate-scale-in glow-success">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-size: 48px; font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-sm opacity-0 animate-fade-up">You're All Settled!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-0 animate-fade-up" style="animation-delay: 0.1s;">No more pending balances for Trip to Tokyo.</p>
+</div>
+<!-- Summary Card -->
+<div class="w-full glass-panel rounded-xl p-lg mb-xl shadow-sm opacity-0 animate-fade-up" style="animation-delay: 0.2s;">
+<div class="flex justify-between items-center mb-md">
+<span class="font-title-lg text-title-lg text-primary">Total Settled</span>
+<span class="font-title-lg text-title-lg text-secondary">$4,250.00</span>
+</div>
+<div class="h-px w-full bg-outline-variant mb-md opacity-30"></div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span> Transactions
+                </span>
+<span class="font-label-lg text-label-lg text-on-surface">12</span>
+</div>
+</div>
+<!-- Member List -->
+<div class="w-full mb-xl">
+<h2 class="font-label-lg text-label-lg text-on-surface-variant mb-md uppercase tracking-wider opacity-0 animate-fade-up" style="animation-delay: 0.3s;">Group Members</h2>
+<div class="flex flex-col gap-sm">
+<!-- Sarah -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-md rounded-lg border border-surface-variant opacity-0 animate-stagger-1">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a young woman with a friendly smile, professional lighting, corporate casual attire, light mode aesthetic, clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXPaMZw5ltCvFCqFiZZdLVAoqu820-OajY2tPPNp4wkhQEbcZ-dIeUcGUS_rMf8DYcSknKgxohVf6OynZ9mdF_XMRpapDWOBJqA-sSNTrBcHFsMCK4g6PzsizMH6BKXLyF7lnvFkHHuF2MPVAPrEkil-l0s7pLAKOTSZOAqrugAA4YwU1PkcKi-GUHjC578lOn50kp17RfoB85Wt4mnsutBsYF_t2GUkhW_IlwQG9DWy-gp7TZ3gQz3btUiWGVHnYrJi3XqjTTpxw"/>
+<span class="font-label-lg text-label-lg text-on-surface">Sarah</span>
+</div>
+<div class="flex items-center gap-xs bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="font-label-md text-label-md">Settled</span>
+</div>
+</div>
+<!-- Mike -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-md rounded-lg border border-surface-variant opacity-0 animate-stagger-2">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a young man wearing glasses, looking confident, professional lighting, corporate casual attire, light mode aesthetic, clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK1oHv6aCr_5hE1BnWr-5Bxb3LDdiGr2a0q3UQGU0uold8qxfkC3WNnj2cp-kTNpFDdPdJZk6hhM2UHagN4Hh-uk2nF98EON8DTe5hGpBLJol2n79d9cJGwPOGwYVOBNh3Q_AHw8SDtfXxCN_Unq7rfG74D5hH5V7uAYITqifSh_Yw7-Gp3rnBAuJuIUg4qwMZPoSsJJPnlGmK6EVXMGA5j6uC5d9n9h0olUdA-_Iq0mOMacLNdXTUTKjNGXyEWb2RTuAku5qJaMc"/>
+<span class="font-label-lg text-label-lg text-on-surface">Mike</span>
+</div>
+<div class="flex items-center gap-xs bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="font-label-md text-label-md">Settled</span>
+</div>
+</div>
+<!-- Emma -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-md rounded-lg border border-surface-variant opacity-0 animate-stagger-3">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a professional woman with curly hair, subtle smile, bright even lighting, light mode aesthetic, clean modern background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9pKr_ItUT_EITpimtj2CeZANGpEN2ShPBYptqlUIPWSXRbIZ37BYQtd1VUWepvjybO1cLIU5O3BwsyQlX8gdlosL1ItLJOcdjp7XuLhpPO7WT_c298wkaSoUZwqffEodH-TG684UI0zbRL85Y_fHBmUML1UpJPZXQe0uxI9KjjUrSQ19SN2XKsV4vmeMsDPeZms41KTnbVl7kR9DivUoImpuVukKvSTZ-oV2bWmiAUP2vE2TxNJkJIuYK7teJLkUagNZYOocRw8E"/>
+<span class="font-label-lg text-label-lg text-on-surface">Emma</span>
+</div>
+<div class="flex items-center gap-xs bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="font-label-md text-label-md">Settled</span>
+</div>
+</div>
+<!-- You -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-md rounded-lg border border-primary-fixed opacity-0 animate-stagger-4">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-title-lg">Y</div>
+<span class="font-label-lg text-label-lg text-on-surface">You</span>
+</div>
+<div class="flex items-center gap-xs bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span class="font-label-md text-label-md">Settled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-md opacity-0 animate-fade-up" style="animation-delay: 0.6s;">
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-sm active:scale-95 transition-transform">
+                Back to Dashboard
+            </button>
+<button class="w-full h-12 bg-transparent border-2 border-secondary text-secondary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-sm active:scale-95 transition-transform hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed hover:border-transparent">
+                View Transaction History
+            </button>
+</div>
+</main>
+</body></html>

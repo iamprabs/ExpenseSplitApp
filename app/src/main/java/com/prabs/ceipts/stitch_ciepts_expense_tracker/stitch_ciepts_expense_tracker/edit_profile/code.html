@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ceipts - Edit Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dfe0ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary-fixed": "#ffdadc",
+                        "surface-tint": "#535a92",
+                        "on-primary-fixed": "#0e154b",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "on-surface-variant": "#46464f",
+                        "tertiary": "#490013",
+                        "on-tertiary-container": "#fc7185",
+                        "surface-dim": "#d8dadc",
+                        "outline-variant": "#c7c5d1",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "inverse-primary": "#bcc2ff",
+                        "primary": "#131b50",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#007439",
+                        "on-primary-container": "#949ad7",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#700223",
+                        "on-tertiary-fixed": "#400010",
+                        "secondary-container": "#6dfe9c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2a3166",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-surface": "#191c1e",
+                        "outline": "#767680",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary": "#006d36"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex justify-center pb-24 md:pb-0">
+<div class="w-full max-w-md md:max-w-2xl bg-surface md:my-8 md:rounded-xl md:shadow-sm md:border md:border-surface-variant overflow-hidden flex flex-col relative">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-on-background flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 z-10 border-b border-surface-variant md:border-none">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-low active:scale-95 duration-100 transition-colors text-on-surface" onclick="window.location.href='{{DATA:SCREEN:SCREEN_20}}'">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg-mobile md:text-title-lg text-primary dark:text-primary-fixed-dim">Edit Profile</h1>
+</div>
+<button class="p-2 -mr-2 rounded-full hover:bg-surface-container-low active:scale-95 duration-100 transition-colors text-primary font-label-lg text-label-lg">
+                Save
+            </button>
+</header>
+<main class="flex-1 overflow-y-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
+<!-- Avatar Section -->
+<section class="flex flex-col items-center justify-center space-y-4">
+<div class="relative group cursor-pointer">
+<img class="w-24 h-24 rounded-full object-cover border-4 border-surface shadow-sm" data-alt="A close-up portrait of a professional young adult with a subtle smile, facing forward. The lighting is soft and natural, emphasizing a clean, modern aesthetic suitable for a high-end financial application avatar. The background is a slightly blurred, warm, light-colored abstract gradient to complement a light-mode UI. Ensure a crisp, high-resolution finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhs5aPVGVg3qQxCqYICdEpcip4lWDJrTHm4XciL-OnZLDfDj2fjStnoY07n6RmVSOglG3wQwMhEPprfEuSKO8aJtkx2UrgO2OkSB9Daj4iFySpPBtZ0Q1Vc5ayzdykrR6EKcplnZepqzvUm1Gc1KTFHEU3LHxjkxzLR5kZHvZO_dkPUulDq-sNP9vRUuAvDvEl61z9i7i-r6-OmsKOWy5UYSPa0yy_-QOr7BwX3pgDWAhZihPKyWYkLMJtWbRloaQf0AZ89p__c2Q">
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary rounded-full p-1.5 shadow-md border-2 border-surface active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div class="text-center">
+<h2 class="font-title-lg text-title-lg text-on-surface">Alex Johnson</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Member since 2022</p>
+</div>
+</section>
+<!-- Personal Info Form -->
+<section class="space-y-4 bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm">
+<h3 class="font-label-lg text-label-lg text-primary uppercase tracking-wider mb-2">Personal Information</h3>
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface bg-surface-container-lowest border border-outline rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary peer font-body-lg text-body-lg" id="fullName" placeholder=" " type="text" value="Alex Johnson">
+<label class="absolute text-on-surface-variant duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-primary font-body-md text-body-md" for="fullName">Full Name</label>
+</div>
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface bg-surface-container-lowest border border-outline rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary peer font-body-lg text-body-lg" id="emailAddress" placeholder=" " type="email" value="alex.j@example.com">
+<label class="absolute text-on-surface-variant duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-primary font-body-md text-body-md" for="emailAddress">Email Address</label>
+</div>
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface bg-surface-container-lowest border border-outline rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary peer font-body-lg text-body-lg" id="phoneNumber" placeholder=" " type="tel" value="+1 (555) 019-2834">
+<label class="absolute text-on-surface-variant duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 peer-focus:text-primary font-body-md text-body-md" for="phoneNumber">Phone Number</label>
+</div>
+</section>
+<!-- Payment Handles Section -->
+<section class="space-y-4 bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Payment Handles</h3>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-1 hover:bg-secondary-container/20 px-2 py-1 rounded-md transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span> Add New
+                    </button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-3 border border-outline-variant rounded-lg bg-surface hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-[#008CFF]/10 flex items-center justify-center text-[#008CFF]">
+<span class="material-symbols-outlined filled">account_balance_wallet</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-medium text-on-surface">Venmo</p>
+<p class="font-body-md text-body-md text-on-surface-variant">@alex-johnson</p>
+</div>
+<button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-all p-2 rounded-full hover:bg-error-container">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="flex items-center gap-4 p-3 border border-outline-variant rounded-lg bg-surface hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-[#003087]/10 flex items-center justify-center text-[#003087]">
+<span class="material-symbols-outlined filled">payments</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-medium text-on-surface">PayPal</p>
+<p class="font-body-md text-body-md text-on-surface-variant">alex.j@example.com</p>
+</div>
+<button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-all p-2 rounded-full hover:bg-error-container">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Action Area -->
+<div class="pt-4">
+<button class="w-full h-12 bg-primary text-on-primary rounded-full font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-md hover:shadow-lg" onclick="window.location.href='{{DATA:SCREEN:SCREEN_20}}'">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                    Save Changes
+                </button>
+</div>
+</main>
+</div>
+
+
+</body></html>

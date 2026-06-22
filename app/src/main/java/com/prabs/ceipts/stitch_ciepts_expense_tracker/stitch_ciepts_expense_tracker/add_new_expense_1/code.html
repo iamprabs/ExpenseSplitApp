@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Add Expense</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Hide scrollbar for category pills */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#bcc2ff",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#bcc2ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed": "#00210c",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2a3166",
+                        "on-surface-variant": "#46464f",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-container": "#fc7185",
+                        "outline": "#767680",
+                        "secondary-container": "#6dfe9c",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-container": "#007439",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-fixed": "#400010",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c7c5d1",
+                        "tertiary-fixed": "#ffdadc",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "surface-variant": "#e0e3e5",
+                        "secondary": "#006d36",
+                        "primary": "#131b50",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#0e154b",
+                        "background": "#f7f9fb",
+                        "on-primary-container": "#949ad7",
+                        "tertiary-container": "#700223",
+                        "on-surface": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary": "#490013",
+                        "surface-tint": "#535a92",
+                        "secondary-fixed-dim": "#4de082",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "primary-fixed": "#dfe0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "margin-desktop": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim flex justify-between items-center px-margin-mobile py-sm z-40 transition-colors duration-200 ease-in-out">
+<div class="flex items-center gap-sm">
+<img alt="Ceipts logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx3wf4l35aYodJFtkqGxWeBPFwO3DCttHEeL9GgJv1tzXmGy0QK1JbUeMS9sDE5Lr5xodacXgvxfa1ZZzBXZHp-7LMF7I3RzsgbREzSm45atVZws5YSb7-Toth7mMhmHAwa_IrGAAPOtmCJ5qUY02SmOIpKMdUKFI9dJe3VC-ZpdDVW4I_-tnwy8qyYmlPb6JsrHxzXQpig07crDAqNhmRwG0VqlYkN2Lz0tbwbbtDkhlpyS3oT5HBqRtyy1u6fvf8BX7GdWLM_V0">
+</div>
+<button class="w-12 h-12 flex items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full transition-colors duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="px-margin-mobile py-lg max-w-2xl mx-auto flex flex-col gap-xl">
+<!-- Header & Action -->
+<div class="flex items-center justify-between">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Add Expense</h1>
+<button class="text-primary font-label-lg text-label-lg hover:bg-primary-container hover:text-on-primary-container px-4 h-10 rounded-full transition-colors" onclick="window.location.href='{{DATA:SCREEN:SCREEN_28}}'">Cancel</button>
+</div>
+<!-- Amount Input Section -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-lg shadow-sm">
+<div class="relative flex items-center justify-center py-sm">
+<span class="absolute left-0 text-display-lg text-on-surface-variant pl-4">$</span>
+<input class="w-full bg-transparent border-none text-center font-display-lg text-display-lg text-primary focus:ring-0 placeholder:text-outline-variant h-20" placeholder="0.00" type="number">
+</div>
+<div class="mt-md">
+<label class="sr-only" for="description">What was it for?</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">description</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface rounded-lg border border-outline text-on-surface font-body-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="description" placeholder="What was it for?" type="text">
+</div>
+</div>
+</section>
+<!-- Category Pills -->
+<section>
+<h2 class="font-label-lg text-label-lg text-on-surface-variant mb-sm px-1">Category</h2>
+<div class="flex overflow-x-auto gap-sm pb-2 hide-scrollbar">
+<button class="h-10 px-5 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg flex items-center gap-xs flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+                    Food
+                </button>
+<button class="h-10 px-5 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-lg text-label-lg flex items-center gap-xs flex-shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">flight</span>
+                    Travel
+                </button>
+<button class="h-10 px-5 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-lg text-label-lg flex items-center gap-xs flex-shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+                    Utilities
+                </button>
+<button class="h-10 px-5 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-label-lg text-label-lg flex items-center gap-xs flex-shrink-0 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                    Groceries
+                </button>
+</div>
+</section>
+<!-- Split Logic Container -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md shadow-sm flex flex-col gap-lg">
+<!-- Paid By & Split Options -->
+<div class="flex flex-col gap-md border-b border-surface-variant pb-lg">
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg text-on-surface">Paid by</span>
+<div class="flex bg-surface-container rounded-lg p-1">
+<button class="px-4 py-2 rounded bg-surface shadow-sm font-label-md text-label-md text-primary">Me</button>
+<button class="px-4 py-2 rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high">Others</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-lg text-body-lg text-on-surface">Split</span>
+<div class="flex gap-2">
+<button class="h-10 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center shadow-sm">Equally</button>
+<button class="h-10 w-10 rounded-lg bg-surface-container border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md hover:bg-surface-container-high">%</button>
+<button class="h-10 w-10 rounded-lg bg-surface-container border border-outline-variant text-on-surface-variant flex items-center justify-center font-label-md hover:bg-surface-container-high">123</button>
+</div>
+</div>
+</div>
+<!-- Members List -->
+<div class="flex flex-col gap-sm">
+<!-- Member Row -->
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-md">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary bg-surface" type="checkbox">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container text-on-primary-container flex items-center justify-center font-title-lg text-title-lg">
+                            M
+                        </div>
+<span class="font-body-lg text-body-lg text-on-surface">You</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-lg text-body-lg text-on-surface-variant">$</span>
+<input class="w-24 h-10 text-right bg-surface border-b border-outline focus:border-primary focus:ring-0 font-body-lg text-on-surface p-0" type="number" value="0.00">
+</div>
+</div>
+<!-- Member Row -->
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-md">
+<input checked="" class="w-5 h-5 rounded border-outline text-primary focus:ring-primary bg-surface" type="checkbox">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant">
+<img alt="Sarah J." class="w-full h-full object-cover" data-alt="A high-quality close-up of a diverse young professional. Soft studio lighting highlights their features. The background is a clean, modern gradient typical of premium app UI avatars. The aesthetic is corporate yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeMJEkJXlT1hIrASmPt4EvL-zRW6bLaPfBv3MroTRWdocbZjZwaBeRuQ2uGGSmYB9KC4mdCABeiVv6Crxg5UJzK6UEBl-GS7nfqHIZnhsesvWEl8jWEOlKuIUzAjXTQPRFghu-UOHcgYfbVMRKxyG9Vx8548RZ7b9km9ffZG665sbtgzdKY3W3TPv6BtfnYaqCrVRLDU4jKGHf8wDZsufSQ3b4Uk-i8h8uDEpIiKzMne8Kkl_rbo-kcWO6YH28LqJo0QLQodZ53OI">
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">Sarah J.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-lg text-body-lg text-on-surface-variant">$</span>
+<input class="w-24 h-10 text-right bg-surface border-b border-outline focus:border-primary focus:ring-0 font-body-lg text-on-surface p-0" type="number" value="0.00">
+</div>
+</div>
+</div>
+</section>
+<!-- Features (Add Receipt, Itemize) -->
+<section class="flex gap-md">
+<button class="flex-1 h-14 rounded-xl border border-outline text-on-surface-variant flex items-center justify-center gap-sm font-label-lg hover:bg-surface-container hover:text-primary transition-colors" onclick="window.location.href='{{DATA:SCREEN:SCREEN_27}}'">
+<span class="material-symbols-outlined">photo_camera</span>
+                Add Receipt
+            </button>
+<button class="flex-1 h-14 rounded-xl border border-outline text-on-surface-variant flex items-center justify-center gap-sm font-label-lg hover:bg-surface-container hover:text-primary transition-colors" onclick="window.location.href='{{DATA:SCREEN:SCREEN_16}}'">
+<span class="material-symbols-outlined">receipt_long</span>
+                Itemize
+            </button>
+</section>
+</main>
+<!-- Floating Action / Save Button -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-surface/90 backdrop-blur-md border-t border-surface-variant flex justify-center z-50 pb-safe">
+<button class="w-full max-w-2xl h-14 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-fixed-variant transition-colors flex items-center justify-center" onclick="window.location.href='{{DATA:SCREEN:SCREEN_28}}'">
+            Save Expense
+        </button>
+</div>
+
+
+
+
+</body></html>

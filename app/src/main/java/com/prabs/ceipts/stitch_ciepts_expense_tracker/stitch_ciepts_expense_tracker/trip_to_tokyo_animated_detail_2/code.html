@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Group Detail - Ceipts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#bcc2ff",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#bcc2ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed": "#00210c",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2a3166",
+                        "on-surface-variant": "#46464f",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-tertiary-container": "#fc7185",
+                        "outline": "#767680",
+                        "secondary-container": "#6dfe9c",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-container": "#007439",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-fixed": "#400010",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c7c5d1",
+                        "tertiary-fixed": "#ffdadc",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "surface-variant": "#e0e3e5",
+                        "secondary": "#006d36",
+                        "primary": "#131b50",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#0e154b",
+                        "background": "#f7f9fb",
+                        "on-primary-container": "#949ad7",
+                        "tertiary-container": "#700223",
+                        "on-surface": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary": "#490013",
+                        "surface-tint": "#535a92",
+                        "secondary-fixed-dim": "#4de082",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "primary-fixed": "#dfe0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "sm": "8px",
+                        "margin-desktop": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    },
+                    "keyframes": {
+                        "fade-in-up": {
+                            "0%": { opacity: 0, transform: "translateY(20px)" },
+                            "100%": { opacity: 1, transform: "translateY(0)" }
+                        },
+                        "pulse-subtle": {
+                            "0%, 100%": { transform: "scale(1)" },
+                            "50%": { transform: "scale(1.05)" }
+                        }
+                    },
+                    "animation": {
+                        "fade-in-up": "fade-in-up 0.5s ease-out forwards",
+                        "fade-in-up-delay-1": "fade-in-up 0.5s ease-out 0.1s forwards",
+                        "fade-in-up-delay-2": "fade-in-up 0.5s ease-out 0.2s forwards",
+                        "pulse-subtle": "pulse-subtle 2s infinite ease-in-out"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            ::before,
+            ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/90 backdrop-blur-md dark:bg-surface-dim/90 w-full top-0 sticky flex justify-between items-center px-margin-mobile py-sm z-40 transition-colors duration-300"><button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all duration-200" onclick="window.location.href='{{DATA:SCREEN:SCREEN_22}}'"><span class="material-symbols-outlined text-title-lg">arrow_back</span></button>
+<div class="flex items-center gap-sm group cursor-pointer">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container ring-2 ring-transparent group-hover:ring-primary/20 transition-all duration-300">
+<img alt="User profile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up portrait of a professional looking individual smiling warmly, shot in high-key lighting with a clean, light-mode background. The color palette features deep blacks and bright whites, conveying reliability and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY7Lc7jC6SdWyKTfHw8DKyNGZW1kKR1_HXYVl7QTaG1VtEREswMAQXYFAdlmXvH-z5q9MrKfQfVJyMuvHALZ_Ru4CeuQB6XPlRz5mPYXTGLWSUfQMFv4QEWO3DLE9X-gHBMEvhfPHvPoCfzL437ROeCr1obSZkCIh3ii3Yl3Crk8CjosrHs5lvwB2g9a10x9KTzIHUHvW_riEb3b0BmL_O9Vnkl1OHVQ86F4dh1727q4CbZwA4QuE4UaUxswgyy4I2Tw0yo-MKsXs"/>
+</div>
+</div>
+<img alt="Ceipts Logo" class="h-8 w-auto object-contain hover:opacity-80 transition-opacity duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx3wf4l35aYodJFtkqGxWeBPFwO3DCttHEeL9GgJv1tzXmGy0QK1JbUeMS9sDE5Lr5xodacXgvxfa1ZZzBXZHp-7LMF7I3RzsgbREzSm45atVZws5YSb7-Toth7mMhmHAwa_IrGAAPOtmCJ5qUY02SmOIpKMdUKFI9dJe3VC-ZpdDVW4I_-tnwy8qyYmlPb6JsrHxzXQpig07crDAqNhmRwG0VqlYkN2Lz0tbwbbtDkhlpyS3oT5HBqRtyy1u6fvf8BX7GdWLM_V0"/>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest active:scale-95 transition-all duration-200 relative">
+<span class="material-symbols-outlined text-title-lg">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full animate-pulse"></span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-margin-mobile pb-[100px] pt-md flex flex-col gap-xl">
+<!-- Header Section -->
+<section class="flex flex-col items-center text-center gap-sm opacity-0 animate-fade-in-up">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container-high mb-sm shadow-sm border border-surface-variant hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+<img alt="Tokyo Trip Cover" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="A stylized, modern illustration of the Tokyo skyline at dusk, featuring the Tokyo Tower. The illustration uses a disciplined, clean vector style with subtle tonal shifts of deep indigo and soft white, maintaining an organized, calm aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4AYretx_hR1rzfEDHXk8xLGIngVIqklFzFE1lJWC8u5xc8vPetdahyhUSDHi58BhnOo7gW67Hu64To_4AAfzQMRK6qQ3yhZqWe8J7WSKLKosMWtlN3EzPzwWhX-eZmuweT2ckal5ux8-RJAfOpHCUPCKDThxkwPrFz4vjYQJLAnVHWUUTPM_j-CT2GH_LQtqg6BGCcY9zQ6Pb6CpbMWJhYDLjMRf5HQs3tarq4_n5dsoh6MYaPBWREx_dcnE6GHkkVN7JH4HYUNU"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Trip to Tokyo</h1>
+<div class="font-body-md text-on-surface-variant">Total group spending</div>
+<div class="font-headline-lg text-headline-lg text-primary mb-md">$4,250.00</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-xl py-sm rounded-full w-full max-w-[200px] hover:opacity-90 hover:shadow-lg active:scale-95 transition-all duration-200 flex items-center justify-center gap-xs group" onclick="window.location.href='{{DATA:SCREEN:SCREEN_18}}'">
+                Settle Up
+                <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+</button>
+</section>
+<!-- Member Balances -->
+<section class="flex flex-col gap-sm opacity-0 animate-fade-in-up-delay-1">
+<h2 class="font-title-lg text-title-lg text-on-surface">Balances</h2>
+<div class="flex gap-md overflow-x-auto no-scrollbar pb-sm pt-xs -mx-margin-mobile px-margin-mobile snap-x">
+<!-- Member 1 (User - Owes money) -->
+<div class="flex flex-col items-center min-w-[80px] gap-xs snap-start group cursor-pointer">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-error group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+<img alt="You" class="w-full h-full object-cover" data-alt="A portrait of a young man with short hair, smiling slightly. Clean, bright studio lighting against a neutral light grey background. Corporate, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi9gIzU_-grTSQB77NkePvUh4KTn6lLwb0S1D56IGkGqDWf7Uynh0c9IbNVnIK1SMMPYcayzirS_senMli3KNYzXzO3eVYs0jW1c-IAeyzVxJR55ZmUg5M5yPsC2PvcT2kZ6OmW41Jh1J2Uguj5u09oDRvIa9CrCbg1873yR7t_xVQryht12rhGWQ5Tyncj3dP2aVHodw_r3zz0pwBmw24SoBTOUBoGJcNhZ9cxikP_nEHfQ1BllBH0GbNoU8YVUCJRwATA2sR_qU"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate w-full text-center group-hover:text-primary transition-colors duration-200">You</span>
+<span class="font-label-md text-label-md text-error group-hover:-translate-y-0.5 transition-transform duration-200">-$120.50</span>
+</div>
+<!-- Member 2 (Owed money) -->
+<div class="flex flex-col items-center min-w-[80px] gap-xs snap-start group cursor-pointer">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+<img alt="Sarah" class="w-full h-full object-cover" data-alt="A portrait of a woman with glasses, looking thoughtful. Soft, diffused white lighting against a very light indigo tinted background. Professional and reliable appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjj4FfdNbHnpBV77KJZEIyzUfXrhYIpLF5tmk4uftYdDssiBhKj_y9ptvZILeSKb0H_ISgsHMkqPrYm993KPoJkbPnVAdv2eupPWawbNX2ebWNMo-_OnXDere9qJVjHaPvBk6BWogWfMLr-4Syx3KMqI1CR3OcMZnRm3lr54rKBpHaXfs6EvPxV-apiS83weUITReQklcj8WNLvYyq13XjUxBth2GCztQ9f3SAVtRFgyRsFNxiOc6CkJ7Yo7n6Cf8wq-jOxJ4TrGM"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate w-full text-center group-hover:text-primary transition-colors duration-200">Sarah</span>
+<span class="font-label-md text-label-md text-secondary group-hover:-translate-y-0.5 transition-transform duration-200">+$340.00</span>
+</div>
+<!-- Member 3 (Settled) -->
+<div class="flex flex-col items-center min-w-[80px] gap-xs snap-start group cursor-pointer">
+<div class="w-14 h-14 rounded-full overflow-hidden border border-outline-variant group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+<img alt="Mike" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A portrait of a man with a beard, friendly expression. Crisp, corporate lighting style against a pure white background. Minimalist and clear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt8JVYEfIEuy5XT3_XpejsO8jXyJsfhH6ufoehMqPt_-7uEd-XGIzlMSIOTO87JYjD1BU4vWZMhEzF16VTUc39NVfkWYGhGuOuap380w6QSf6R1ts0_8eOoXvle0Fpu5tJIxn641z2o-Ou1HYa_qZ_BBRtfRZ2Piu4EDrB9Z4WR0XcLKB8z8uPJM0tNS_jDIUF4-kvy311YfrbOs40K5dHaBWylHuSSL9JWvZ05JBg_Pvp8hkfPDtj1syZF0lksG0UobCAM60KceY"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate w-full text-center group-hover:text-primary transition-colors duration-200">Mike</span>
+<span class="font-label-md text-label-md text-outline group-hover:-translate-y-0.5 transition-transform duration-200">Settled</span>
+</div>
+<!-- Member 4 (Owed money) -->
+<div class="flex flex-col items-center min-w-[80px] gap-xs snap-start group cursor-pointer">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+<img alt="Emma" class="w-full h-full object-cover" data-alt="A portrait of a young woman with long dark hair. Bright, high-key lighting setup creating a modern, clean fintech aesthetic. Neutral light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPIRm1CEFY1zXFsSRp9-sx5qfQBIqQ-J29OSvsHbCspUBUtOQndy9dp0QqoMkdKmdPpHaKfTGNWBmdHvyg7J6cBXQ5r9w0QKwdepV4CZycq5ytTYUFa928Lmjhr7-O_9sU_SA7GiYZP6RshPGgn2I9uSd-QaHraQ6ro_kOMaN5lk1hXsjJx5lJN_AoD-d54bqahMbeD3ZOu2HTDe8vUn2oWdnluy5eiZV4o1aAp1SxpE4c6Ep5w7pPeNkmvrkfrGaNB18MAKhN0e8"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate w-full text-center group-hover:text-primary transition-colors duration-200">Emma</span>
+<span class="font-label-md text-label-md text-secondary group-hover:-translate-y-0.5 transition-transform duration-200">+$85.00</span>
+</div>
+</div>
+</section>
+<!-- Expense List -->
+<section class="flex flex-col gap-md opacity-0 animate-fade-in-up-delay-2">
+<div class="flex justify-between items-end">
+<h2 class="font-title-lg text-title-lg text-on-surface">Recent Expenses</h2>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container active:scale-95 transition-all duration-200 flex items-center gap-xs group">
+    View All
+    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+</button>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Expense Item 1 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-md flex items-center justify-between shadow-sm hover:shadow-md hover:bg-surface-container-low hover:translate-x-1 cursor-pointer transition-all duration-300 group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-title-lg group-hover:scale-110 transition-transform duration-300">restaurant</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors duration-300">Sushi Dinner</span>
+<span class="font-body-md text-on-surface-variant">Sarah paid $120.00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-error">-$40.00</span>
+<span class="font-label-md text-label-md text-outline">Yesterday</span>
+</div>
+</div>
+<!-- Expense Item 2 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-md flex items-center justify-between shadow-sm hover:shadow-md hover:bg-surface-container-low hover:translate-x-1 cursor-pointer transition-all duration-300 group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-title-lg group-hover:scale-110 transition-transform duration-300">local_taxi</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors duration-300">Airport Taxi</span>
+<span class="font-body-md text-on-surface-variant">You paid $45.00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-secondary">+$15.00</span>
+<span class="font-label-md text-label-md text-outline">Oct 12</span>
+</div>
+</div>
+<!-- Expense Item 3 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-md flex items-center justify-between shadow-sm hover:shadow-md hover:bg-surface-container-low hover:translate-x-1 cursor-pointer transition-all duration-300 group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-title-lg group-hover:scale-110 transition-transform duration-300">hotel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors duration-300">Hotel Deposit</span>
+<span class="font-body-md text-on-surface-variant">Mike paid $300.00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-outline">Not involved</span>
+<span class="font-label-md text-label-md text-outline">Oct 10</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-primary text-on-primary rounded-xl flex items-center justify-center shadow-lg hover:bg-primary-container hover:text-on-primary-container hover:shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-300 z-50 group" onclick="window.location.href='{{DATA:SCREEN:SCREEN_5}}'">
+<span class="material-symbols-outlined text-headline-lg-mobile group-hover:rotate-90 transition-transform duration-300" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

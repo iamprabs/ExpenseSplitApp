@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">División de Gastos</string>
+    <string name="app_name">Ceipts</string>
     <string name="analytics">Análisis</string>
     <string name="total_spending">Gasto Total</string>
     <string name="category_breakdown">Desglose por Categoría</string>

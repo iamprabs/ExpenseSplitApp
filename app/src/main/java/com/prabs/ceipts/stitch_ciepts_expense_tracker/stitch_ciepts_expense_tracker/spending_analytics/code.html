@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advanced Spending Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dfe0ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4de082",
+                        "tertiary-fixed": "#ffdadc",
+                        "surface-tint": "#535a92",
+                        "on-primary-fixed": "#0e154b",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "on-surface-variant": "#46464f",
+                        "tertiary": "#490013",
+                        "on-tertiary-container": "#fc7185",
+                        "surface-dim": "#d8dadc",
+                        "outline-variant": "#c7c5d1",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "inverse-primary": "#bcc2ff",
+                        "primary": "#131b50",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#007439",
+                        "on-primary-container": "#949ad7",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#700223",
+                        "on-tertiary-fixed": "#400010",
+                        "secondary-container": "#6dfe9c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2a3166",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#6dfe9c",
+                        "on-surface": "#191c1e",
+                        "outline": "#767680",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary": "#006d36"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        .donut-segment {
+            transition: stroke-width 0.2s ease, opacity 0.2s ease;
+            cursor: pointer;
+        }
+        .donut-segment:hover {
+            stroke-width: 14;
+            opacity: 0.9;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant flex items-center px-margin-mobile h-14 w-full">
+<button class="mr-4 text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg-mobile text-primary">Analytics</h1>
+<div class="flex-grow"></div>
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<main class="flex-grow pb-[80px] md:pb-lg px-margin-mobile md:px-margin-desktop py-lg max-w-7xl mx-auto w-full space-y-lg">
+<!-- Toggle View -->
+<div class="flex justify-center mb-lg">
+<div class="bg-surface-container-low p-1 rounded-full inline-flex border border-outline-variant">
+<button class="px-6 py-2 rounded-full font-label-lg text-label-lg bg-primary text-on-primary shadow-sm transition-all">Personal</button>
+<button class="px-6 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-highest transition-all">Group</button>
+</div>
+</div>
+<!-- Total Spend Overview -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h2 class="font-body-md text-body-md text-on-surface-variant">Total Spend (This Month)</h2>
+<div class="font-headline-lg text-headline-lg-mobile text-primary mt-sm">$4,250.00</div>
+</div>
+<div class="bg-secondary-fixed-dim/20 text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_down">trending_down</span>
+<span>12% vs last month</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Donut Chart Card (Categories) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-lg text-title-lg-mobile text-on-background">Categories</h3>
+<button class="text-primary font-label-md text-label-md hover:underline">View All</button>
+</div>
+<div class="flex-grow flex flex-col items-center justify-center relative py-md">
+<svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background ring -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#f2f4f6" stroke-width="10"></circle>
+<!-- Segments -->
+<!-- Food (45%) -->
+<circle class="donut-segment" cx="50" cy="50" fill="transparent" r="40" stroke="#2a3166" stroke-dasharray="113.1 251.2" stroke-dashoffset="0" stroke-width="10"></circle>
+<!-- Transport (30%) -->
+<circle class="donut-segment" cx="50" cy="50" fill="transparent" r="40" stroke="#006d36" stroke-dasharray="75.4 251.2" stroke-dashoffset="-113.1" stroke-width="10"></circle>
+<!-- Lodging (25%) -->
+<circle class="donut-segment" cx="50" cy="50" fill="transparent" r="40" stroke="#949ad7" stroke-dasharray="62.8 251.2" stroke-dashoffset="-188.5" stroke-width="10"></circle>
+</svg>
+<!-- Center Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="font-label-md text-label-md text-on-surface-variant">Top Category</span>
+<span class="font-body-lg text-body-lg font-semibold text-primary">Food</span>
+</div>
+</div>
+<div class="mt-4 space-y-sm">
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-body-md text-body-md text-on-surface">Food</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-background">$1,912.50 (45%)</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface">Transport</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-background">$1,275.00 (30%)</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-on-primary-container"></span>
+<span class="font-body-md text-body-md text-on-surface">Lodging</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-background">$1,062.50 (25%)</span>
+</div>
+</div>
+</div>
+<!-- Line Graph Card (Trends) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-lg text-title-lg-mobile text-on-background">Spending Trend</h3>
+<select class="bg-surface-container-low border-none rounded-md font-label-md text-label-md text-on-surface-variant py-1 pl-2 pr-8 focus:ring-primary">
+<option>Last 6 Months</option>
+<option>This Year</option>
+</select>
+</div>
+<div class="flex-grow flex items-end pt-lg relative h-48">
+<!-- Placeholder Line Graph built with SVG -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 200">
+<!-- Grid Lines -->
+<line stroke="#eceef0" stroke-width="1" x1="0" x2="400" y1="50" y2="50"></line>
+<line stroke="#eceef0" stroke-width="1" x1="0" x2="400" y1="100" y2="100"></line>
+<line stroke="#eceef0" stroke-width="1" x1="0" x2="400" y1="150" y2="150"></line>
+<!-- Data Line -->
+<path d="M 0 150 C 50 120, 100 160, 150 90 C 200 20, 250 80, 300 110 C 350 140, 400 40, 400 40" fill="none" stroke="#2a3166" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Area Fill -->
+<path d="M 0 150 C 50 120, 100 160, 150 90 C 200 20, 250 80, 300 110 C 350 140, 400 40, 400 40 L 400 200 L 0 200 Z" fill="url(#gradient)" opacity="0.1"></path>
+<!-- Data Points -->
+<circle cx="150" cy="90" fill="#ffffff" r="4" stroke="#2a3166" stroke-width="2"></circle>
+<circle cx="300" cy="110" fill="#ffffff" r="4" stroke="#2a3166" stroke-width="2"></circle>
+<circle cx="400" cy="40" fill="#ffffff" r="4" stroke="#2a3166" stroke-width="2"></circle>
+<!-- Defs -->
+<defs>
+<lineargradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2a3166"></stop>
+<stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute bottom-0 left-0 w-full flex justify-between font-label-md text-label-md text-outline px-2 transform translate-y-6">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface border-t border-outline-variant md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md mt-1">Expenses</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md mt-1">Groups</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label-md text-label-md mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

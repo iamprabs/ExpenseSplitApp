@@ -1,0 +1,224 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Scan Receipt - Ceipts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#4de082",
+                        "on-tertiary-fixed": "#400010",
+                        "on-surface": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#fc7185",
+                        "surface-tint": "#535a92",
+                        "tertiary": "#490013",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#ffb2b9",
+                        "outline": "#767680",
+                        "on-surface-variant": "#46464f",
+                        "on-primary-fixed": "#0e154b",
+                        "tertiary-fixed": "#ffdadc",
+                        "primary-container": "#2a3166",
+                        "background": "#f7f9fb",
+                        "on-primary-container": "#949ad7",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00210c",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed-variant": "#891933",
+                        "on-secondary-container": "#007439",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-primary": "#bcc2ff",
+                        "secondary": "#006d36",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6dfe9c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dfe0ff",
+                        "primary": "#131b50",
+                        "tertiary-container": "#700223",
+                        "outline-variant": "#c7c5d1",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#bcc2ff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#3b4278",
+                        "surface-dim": "#d8dadc",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-container": "#eceef0",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }],
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Camera overlay cut-out effect */
+        .camera-overlay {
+            background: radial-gradient(circle, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.7) 100%);
+        }
+        
+        .receipt-frame {
+            box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-white h-screen w-screen overflow-hidden relative font-body-md text-body-md select-none">
+<!-- Simulated Camera Feed Background -->
+<div class="absolute inset-0 z-0 bg-zinc-900 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center opacity-60" data-alt="A slightly blurred, top-down view of a modern desk surface. A crisp, white paper receipt rests on the dark wood desk. The lighting is bright and even, simulating a camera phone flash or strong overhead office lighting. The aesthetic is realistic, focusing on utility and clarity, typical of a document scanning application. A few subtle, out-of-focus office items like a pen or coffee cup edge might be visible in the periphery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-LQvBheptvONf1VMY3CsHfUqxhVZvQ7ij7u4tvdRIdNbPljqaQP_8T8V4G74Q1XGDwqfOlCZ0VkwxxnMzX8BU4r3JEBWrrXq5v2_XwN6bsRBpHf0KzbEXXXMUcHSST2OE4tbzF-sL5SFshcFjreHQT6D7D3qUY0zzJ5bAreOAthpvgkcFlnaWCQWphZPcTbM0WhwgRtrRJqSKIyj_2sXa89n2jzI-swhKn_aGKX02KjTBiA79_bXesWdcBGUgZuheook4zHGHWkU')"></div>
+</div>
+<!-- Top Controls -->
+<div class="absolute top-0 left-0 w-full z-20 flex justify-between items-center p-margin-mobile pt-10">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md text-white active:scale-95 transition-transform" onclick="location.href='{{DATA:SCREEN:SCREEN_5}}'">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+<div class="flex space-x-4">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md text-white active:scale-95 transition-transform" id="flashToggle">
+<span class="material-symbols-outlined text-2xl" data-icon="flash_off">flash_off</span>
+</button>
+</div>
+</div>
+<!-- Viewfinder Area -->
+<div class="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
+<!-- Instructional Text -->
+<div class="mb-8 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full pointer-events-auto">
+<p class="font-title-lg text-title-lg text-white text-center">Align receipt within the frame</p>
+</div>
+<!-- Guide Frame -->
+<div class="w-4/5 h-[60%] border-2 border-white/50 rounded-xl relative receipt-frame overflow-hidden">
+<!-- Corner Brackets -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-secondary-fixed-dim rounded-tl-xl"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-secondary-fixed-dim rounded-tr-xl"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-secondary-fixed-dim rounded-bl-xl"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-secondary-fixed-dim rounded-br-xl"></div>
+<!-- Scanning Line Animation -->
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary-fixed-dim shadow-[0_0_15px_rgba(77,224,130,0.8)] opacity-70 animate-[scan_2s_ease-in-out_infinite]"></div>
+</div>
+</div>
+<style>
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+<!-- Bottom Controls -->
+<div class="absolute bottom-0 left-0 w-full z-20 pb-12 pt-8 px-8 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col items-center">
+<div class="flex justify-between items-center w-full max-w-md mx-auto">
+<!-- Gallery Button -->
+<button class="flex flex-col items-center justify-center space-y-2 text-white/80 active:scale-95 transition-transform w-16">
+<div class="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+</div>
+</button>
+<!-- Capture Button -->
+<button class="relative w-20 h-20 flex items-center justify-center active:scale-90 transition-transform duration-200" id="captureBtn" onclick="location.href='{{DATA:SCREEN:SCREEN_16}}'">
+<div class="absolute inset-0 bg-white rounded-full opacity-30"></div>
+<div class="w-16 h-16 bg-white rounded-full border-4 border-black/20 flex items-center justify-center shadow-lg"></div>
+</button>
+<!-- Empty space for symmetry -->
+<div class="w-16"></div>
+</div>
+<div class="mt-8 flex space-x-6 overflow-x-auto hide-scrollbar snap-x px-4 pb-2 w-full max-w-sm justify-center">
+<button class="font-label-lg text-label-lg px-4 py-2 rounded-full bg-white/20 text-white snap-center whitespace-nowrap backdrop-blur-sm">Auto</button>
+<button class="font-label-lg text-label-lg px-4 py-2 rounded-full text-white/60 snap-center whitespace-nowrap">Manual</button>
+</div>
+</div>
+<!-- Hidden Navigation Shell as per rules (Suppressed for transactional/task-focused intent) -->
+<script>
+        // Simple interaction for Flash Toggle
+        const flashToggle = document.getElementById('flashToggle');
+        const flashIcon = flashToggle.querySelector('span');
+        let isFlashOn = false;
+
+        flashToggle.addEventListener('click', () => {
+            isFlashOn = !isFlashOn;
+            if (isFlashOn) {
+                flashIcon.textContent = 'flash_on';
+                flashIcon.classList.add('fill', 'text-yellow-400');
+            } else {
+                flashIcon.textContent = 'flash_off';
+                flashIcon.classList.remove('fill', 'text-yellow-400');
+            }
+        });
+
+        // Capture button animation
+        const captureBtn = document.getElementById('captureBtn');
+        captureBtn.addEventListener('click', () => {
+            const innerCircle = captureBtn.querySelector('.w-16');
+            innerCircle.classList.add('scale-75', 'bg-secondary-fixed-dim');
+            setTimeout(() => {
+                innerCircle.classList.remove('scale-75', 'bg-secondary-fixed-dim');
+                // Simulate processing
+                document.body.innerHTML += `<div class="absolute inset-0 z-50 bg-white animate-pulse opacity-50 pointer-events-none"></div>`;
+            }, 150);
+        });
+    </script>
+
+
+
+
+</body></html>
